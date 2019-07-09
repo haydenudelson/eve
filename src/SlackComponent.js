@@ -10,8 +10,6 @@ const CHANNEL = process.env.SLACK_CHANNEL;
 const MAX_MSGS = 4;
 
 const CardContainer = styled.div`
-  background-color: ${CX_DARK_BLUE};
-
   font-family: ${CX_FONT};
   font-size: 50px;
   color: ${CX_OFF_WHITE};

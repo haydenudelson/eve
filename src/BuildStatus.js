@@ -11,7 +11,6 @@ const URL =
 const Builds = styled.div`
   width: 55vw;
   height: 200px;
-  border: solid black 3px;
   border-radius: 20px;
   padding: 20px;
   background-color: ${CX_OFF_WHITE};
