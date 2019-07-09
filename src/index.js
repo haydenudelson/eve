@@ -6,6 +6,7 @@ import logo from "../resources/logo-white.png";
 import ClockFull from "./clock.js";
 import BuildStatus from "./BuildStatus";
 import SlackComponent from "./SlackComponent";
+import Grid from "@material-ui/core/Grid";
 
 const Banner = styled.nav`
   background: ${CX_DARK_BLUE};
@@ -69,19 +70,33 @@ const Logo = () => {
   return <img src={logo} alt="Logo" height="100vh" />;
 };
 
+const useStyles = makeStyles(theme => ({
+  banner: {
+    background: CX_DARK_BLUE,
+    padding-left: 40px,
+    padding-right: 40px,
+    margin: 0%,
+    border-bottom: solid black 3px,
+    border-top: solid black 3px,
+    height: 125px
+  }
+}));
+
+
+
 ReactDOM.render(
   <div>
-    <MainGridVert>
-      <Banner>
-        <BannerGrid>
+    <Grid>
+      <Grid item xs={12}>
+        <Banner>
           <Logo />
           <ClockFull timezone="US/Arizona" place="PHX" />
           <ClockFull timezone="US/Mountain" place="DEN" />
           <ClockFull timezone="US/Eastern" place="BOS/DC" />
           <ClockFull timezone="Australia/Sydney" place="MEL (+1)" />
-        </BannerGrid>
-      </Banner>
-      <ContentHorz>
+        </Banner>
+      </Grid>
+      <Grid item xs={12}>
         <LeftBox>
           {/* Left box content */}
           <BuildStatus />
@@ -90,8 +105,8 @@ ReactDOM.render(
           {/* Right box content */}
           <SlackComponent />
         </RightBox>
-      </ContentHorz>
-    </MainGridVert>
+      </Grid>
+    </Grid>
   </div>,
 
   document.getElementById("iamroot")
